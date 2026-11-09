@@ -146,13 +146,13 @@ function displaycampus() {
 }
 
 function displayconfig(){
-  let dl = createElement("dl")
-  let div = createElement("div")
-  let dt = createElement("dt")
-  let dd = createElement("dd")
-  let div2 = createElement("div")
-  let dt2 = createElement("dt")
-  let dd2 = createElement("dd")
+  let dl = document.createElement("dl")
+  let div = document.createElement("div")
+  let dt = document.createElement("dt")
+  let dd = document.createElement("dd")
+  let div2 = document.createElement("div")
+  let dt2 = document.createElement("dt")
+  let dd2 = document.createElement("dd")
 
   dl.classList.add("recap-liste")
   dd.classList.add("recap-atelier")
@@ -173,4 +173,3 @@ form.addEventListener("submit",(e)=>{
   displayconfig()
   recapfin.removeAttribute("hidden")
 })
-console.log()
