@@ -146,6 +146,7 @@ function displaycampus() {
 }
 
 function displayconfig(){
+  recap.textContent = ""
   let dl = document.createElement("dl")
   let div = document.createElement("div")
   let dt = document.createElement("dt")
@@ -153,19 +154,32 @@ function displayconfig(){
   let div2 = document.createElement("div")
   let dt2 = document.createElement("dt")
   let dd2 = document.createElement("dd")
+  let div3 = document.createElement("div")
+  let dt3 = document.createElement("dt")
+  let dd3 = document.createElement("dd")
 
   dl.classList.add("recap-liste")
   dd.classList.add("recap-atelier")
   dd2.classList.add("recap-mode")
+  dt3.classList.add("recap-detail-libelle")
+  dd3.classList.add("recap-detail-valeur")
 
   dt.textContent = "Atelier"
   dt2.textContent = "Participation"
   dd.textContent = selectedConfig.atelierId
   dd2.textContent = selectedConfig.mode
+  if(selectedConfig.campus != ""){
+    dt3.textContent = "campus"
+    dd3.textContent = selectedConfig.campus
+  }else if(selectedConfig.email != ""){
+    dt3.textContent = "email"
+    dd3.textContent = selectedConfig.email
+  }
 
   div.append(dt,dd)
   div2.append(dt2,dd2)
-  dl.append(div,div2)
+  div3.append(dt3,dd3)
+  dl.append(div,div2,div3)
   recap.append(dl)
 }
 form.addEventListener("submit",(e)=>{
